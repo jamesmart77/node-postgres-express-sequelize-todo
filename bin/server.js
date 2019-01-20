@@ -5,12 +5,8 @@ const http = require('http');
 const app = require('../express');
 
 const port = parseInt(process.env.PORT, 10) || 8000;
-// app.set('port', port);
+app.set('port', port);
 
 // start server
-if (process.env.NODE_ENV === 'production') {
-    app.listen(port, () => console.log(`Listening on port ${port}`));  
-} else {
-    const server = http.createServer(app);
-    server.listen(port);
-}
+const server = http.createServer(app);
+server.listen(port);
