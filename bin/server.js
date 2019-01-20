@@ -7,5 +7,6 @@ const app = require('../express');
 const port = parseInt(process.env.PORT, 10) || 8000;
 app.set('port', port);
 
+// start server
 const server = http.createServer(app);
 server.listen(port);
