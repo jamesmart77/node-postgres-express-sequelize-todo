@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 
 // Set up the express app
 const app = express();
+const port = process.env.PORT || 8000;
 
 //Log requests to the console
 app.use(logger('dev'));
@@ -20,4 +21,4 @@ app.get('*', (req, res) => res.status(200).send({
     message: 'Welcome to the beginning of the todo app!!',
 }));
 
-module.exports = app;
+app.listen(port, () => console.log(`Listinging on port ${port}`));
